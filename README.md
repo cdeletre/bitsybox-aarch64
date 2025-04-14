@@ -11,6 +11,7 @@ git clone https://github.com/cdeletre/bitsybox-aarch64.git
 ## Build the docker image
 
 ```
+cd bitsybox-aarch64
 docker build --platform=linux/arm64 -t bitsybox-aarch64 .
 ```
 

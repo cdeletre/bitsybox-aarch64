@@ -2,4 +2,8 @@
 
 git clone https://github.com/le-doux/bitsybox.git bitsybox
 
-g++ bitsybox/src/bitsybox/main.c bitsybox/src/bitsybox/duktape/duktape.c `sdl2-config --libs` `sdl2-config --cflags` -lm -fpermissive -DPLATEFORM_LINUX -O2 -o bitsybox.aarch64
+cd bitsybox
+
+patch -p1  < ../patch/01-SDL_AudioSpec.patch
+
+g++ src/bitsybox/main.c src/bitsybox/duktape/duktape.c `sdl2-config --libs` `sdl2-config --cflags` -lm -fpermissive -DPLATEFORM_LINUX -O2 -o ../bitsybox.aarch64
